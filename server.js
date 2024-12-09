@@ -23,6 +23,8 @@ async function connectDB() {
 
 
 connectDB()
+app.use(express.urlencoded({ extended: true })); // Para requisições do tipo form-urlencoded
+app.use(express.json()); // Para requisições do tipo JSON
 
 app.set('views', path.resolve(__dirname, 'src', 'views'));
 app.set('view engine', 'ejs');

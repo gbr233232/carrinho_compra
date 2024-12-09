@@ -1,10 +1,11 @@
 const express = require('express');
 const route = express.Router();
 
-route.get('/', (req,res) => {
-    res.render('index')
-});
 
-route.post('/jogarCarrinho')
+const cadastroController = require('./src/controllers/produtoController')
 
-module.exports = route
+
+route.get('/', cadastroController.index);
+route.post('/register', cadastroController.register);
+
+module.exports = route; 

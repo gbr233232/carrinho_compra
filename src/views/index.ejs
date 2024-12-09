@@ -1,11 +1,78 @@
 <%- include('includes/head') %>
 <%- include('includes/nav') %>
-<div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">Porshe</h5>
-      <p class="card-text">R$1.000.000</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
+
+
+
+<div class="container">
+  <div class="row">
+      <div class="col-lg-2"></div>
+
+      <div class="col-lg-8 my-3">
+          
+          <p class="text-center lead">Cadastro de produtos</p>
+
+
+
+          
+
+          <div class="col-lg">
+
+             
+
+
+            <div class="text-center">
+
+              <form action="/register" method="POST">
+                <input type="text"  placeholder="Produto" name="produto" required />
+
+                <input type="tel" placeholder="Valor" name="valor" required />
+                <button type="submit">Cadastrar</button>
+              </form>
+            </div>
+
+          </div>
+          <% if(produtos.length > 0) {%>
+            <div class="responsive-table">
+                <table class="table">
+                    <% produtos.forEach(produto =>{ %>
+
+                        <tr>
+
+                            <td><%= produto.produto %></td>
+                            <td><%= produto.valor %></td>
+                            <td><a href="">Editar</a></td>
+                            <td><a class="text-danger" href="">Delete</a></td>
+
+                        </tr>
+
+                    <% }); %>
+            <%} else{ %>
+
+                <p class="text-center lead">Não existem contatos na sua agenda. </p>
+
+            <%}%> 
+
+                </table>
+            </div>
+        </div>
+          
+
+          <div class="responsive-table">
+
+          </div>
+      </div>
+
+      <div class="col-lg-2"></div>
   </div>
+</div>
+
+
+
+
+
+
+
+
+  
 
 <%- include('includes/footer') %>
