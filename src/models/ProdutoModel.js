@@ -22,5 +22,10 @@ Produto.buscaProdutos = async function(){
     return produtos;
 }
 
+Produto.delete = async function(){
+    const produtos = await ProdutoModel.find()
+    .sort({ criadoEm: -1 });
+    return produtos;
+}
 
 module.exports = Produto;
